@@ -12,7 +12,7 @@ const AboutUs = () => {
             </Helmet>
             <div id="root" className="bg-gray-900 text-gray-200">
                 <div className="container mx-auto px-4 py-8">
-                    <div className="text-center md:text-left md:ml-4">
+                    <div className="text-left md:ml-4">
                         <h1 className="text-4xl font-bold text-gray-200 mb-4">About Us</h1>
                         <p className="text-lg text-gray-300 mb-8">
                             Welcome to National Law Chamber, your trusted partner in legal excellence. With a rich legacy spanning three decades, we have been at the forefront of delivering unparalleled legal services and expertise. Since our inception, we have remained steadfast in our commitment to providing exceptional representation and counsel to our clients, earning us a reputation for excellence and integrity in the legal community.

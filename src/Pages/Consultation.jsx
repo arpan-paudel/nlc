@@ -132,7 +132,7 @@ const Consultation = () => {
             </Helmet>
             <div id="root" className="bg-gray-900 text-gray-200">
                 <div className="container mx-auto px-4 py-8">
-                    <div className="text-center md:text-left md:ml-4">
+                    <div className="text-left md:ml-4">
                         <h1 className="text-4xl font-bold text-gray-200 mb-4">Welcome to Our Consultation Services</h1>
                         <p className="text-lg text-gray-300 mb-8">
                             At National Law Chamber, we understand that every legal matter is unique and requires personalized attention. Our consultation services are designed to provide you with expert guidance and support tailored to your specific needs. Whether you're facing a complex legal issue or simply need clarification on a matter, our team of experienced professionals is here to help.

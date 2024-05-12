@@ -111,7 +111,7 @@ const ContactUs = () => {
             </Helmet>
             <div id="root" className="bg-gray-900 text-gray-200">
                 <div className="container mx-auto px-4 py-8">
-                    <div className="text-center md:text-left md:ml-4">
+                    <div className="text-left md:ml-4">
                         <h1 className="text-4xl font-bold text-gray-200 mb-4">Contact Us</h1>
                         <p className="text-lg text-gray-300 mb-8">
                             We're here to help you with your legal needs. Contact National Law Chamber for expert legal services in Nepal.

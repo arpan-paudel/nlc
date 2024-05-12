@@ -10,7 +10,7 @@ const PracticeAreas = () => {
             </Helmet>
             <div id="root" className="bg-gray-900 text-gray-200 py-8">
                 <div className="container mx-auto px-4">
-                    <div className="text-center md:text-left md:ml-4">
+                    <div className="text-left md:ml-4">
                         <h1 className="text-4xl font-bold text-gray-200 mb-4">Practice Areas</h1>
                         <p className="text-lg text-gray-300 mb-8">
                             Explore our practice areas at National Law Chamber. Our team provides expert legal services tailored to your needs.
