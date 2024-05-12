@@ -1,7 +1,5 @@
 import React,{useState, useEffect} from "react";
 import { Helmet } from "react-helmet";
-import Navbar from "../component/navbar";
-import Footer from "../component/footer";
 import { Link } from "react-router-dom";
 import nlc from "../assets/nationalLawChamber.jpg";
 
@@ -26,7 +24,7 @@ const Home = () => {
             }, 2200);
         }
         return () => clearInterval(interval);
-    }, [index, textToType]);
+    }, [index, textToType, showCursor]);
     
     return (
         <>
