@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
     const location = useLocation();
     const [isOpen, setIsOpen] = useState(false);
 
+    useEffect(() => {
+        // Close the menu when a page is selected
+        setIsOpen(false);
+    }, [location]);
+
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
     return (
-        <nav className="bg-gray-800 font-sans">
+        <nav className="bg-gray-800 font-sans relative z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
@@ -42,8 +47,8 @@ const Navbar = () => {
             </div>
 
             {isOpen && (
-                <div className="md:hidden">
-                    <ul className="bg-gray-800 px-5">
+                <div className="md:hidden absolute top-16 inset-x-0 bg-gray-800 px-5 border-b border-gray-900">
+                    <ul>
                         <li className="pb-4"><NavItem to="/" label="Home" isActive={location.pathname === "/"} /></li>
                         <li className="pb-4"><NavItem to="/aboutus" label="About Us" isActive={location.pathname === "/aboutus"} /></li>
                         <li className="pb-4"><NavItem to="/practiceareas" label="Practice Areas" isActive={location.pathname === "/practiceareas"} /></li>
@@ -58,7 +63,7 @@ const Navbar = () => {
 
 const NavItem = ({ to, label, isActive }) => {
     return (
-        <Link to={to} className={`text-white px-3 py-2 rounded-md text-sm font-medium  ${isActive ? "bg-gray-900" : "hover:text-gray-400 focus:bg-gray-700"} focus:outline-none focus:text-white`}>
+        <Link to={to} className={`block text-white px-3 py-2 rounded-md text-sm font-medium  ${isActive ? "bg-gray-900" : "hover:text-gray-400 focus:bg-gray-700"} focus:outline-none focus:text-white`}>
             {label}
         </Link>
     );
