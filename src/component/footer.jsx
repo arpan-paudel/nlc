@@ -41,8 +41,9 @@ const Footer = () => {
                     </div>
 
                     <div className="text-center md:text-left">
+                        <Link to={"/contactus"}>
                         <h2 className="text-white mb-2 inline-block">Contact Information</h2>
-                        <span className="text-blue-500 text-xs inline-block ml-1"><Link to={"/contactus"}><FaExternalLinkAlt /></Link></span>
+                            <span className="text-blue-500 text-xs inline-block ml-1"><FaExternalLinkAlt /></span></Link>
                         <p className="text-gray-400">
                             Address: Anamnagar, Kathmandu
                             <br />
