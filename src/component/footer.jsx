@@ -17,7 +17,7 @@ const Footer = () => {
 
                 <div className="flex flex-col md:flex-row md:justify-between items-center">
                     <div className="mb-6 text-center md:text-left md:mb-0 md:mr-8">
-                        <h1 className="text-white text-2xl mb-2">National Law Chamber</h1>
+                        <Link to={"/"}><h1 className="text-white text-2xl mb-2 cursor-pointer">National Law Chamber</h1></Link>
                         <p className="text-gray-400">Your Trusted Legal Partner</p>
                     </div>
                     <div className="mb-6 md:mb-0 md:mr-8">

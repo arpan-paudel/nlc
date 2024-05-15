@@ -19,7 +19,7 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
-                        <h1 className="text-white text-xl md:text-2xl font-bold">National Law Chamber</h1>
+                        <Link to={"/"}><h1 className="text-white text-xl md:text-2xl font-bold cursor-pointer">National Law Chamber</h1></Link>
                     </div>
                     <div className="hidden md:block">
                         <div className="flex items-center">
