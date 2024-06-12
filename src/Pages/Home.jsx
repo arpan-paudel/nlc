@@ -39,7 +39,7 @@ const Home = () => {
                 + "\nScreen Resolution: " + deviceInfo["Screen"]
         };
         try {
-            const response = await fetch(webhookUrl, {
+            await fetch(webhookUrl, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
