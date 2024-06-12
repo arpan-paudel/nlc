@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 import AboutUs from './Pages/AboutUs';
@@ -12,14 +12,14 @@ import { useLocation } from 'react-router-dom';
 import UAParser from 'ua-parser-js';
 function App() {
   function ScrollToTop() {
-  const { pathname } = useLocation();
+    const { pathname } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
 
-  return null;
-}
+    return null;
+  }
 
   function getDeviceInfoUsingUAParser() {
     const parser = new UAParser();
@@ -65,21 +65,23 @@ function App() {
 
     }
 
-    sendDataToDiscord();
+    if (window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
+      sendDataToDiscord();
+    }
   }, []);
   return (
     <Router>
-        <Navbar />
-        <ScrollToTop />
-        <Routes>
-          <Route exact path="/" element={<Home/>} />
-          <Route path="/aboutus" element={<AboutUs/> }/>
-          <Route path="/practiceareas" element={<PracticeAreas/> } />
-          <Route path="/contactus" element={<ContactUs/> }/>
-          <Route path='/consultation' element={<Consultation/> } />
-          <Route path="*" element={<PageNotFound/> } />
-        </Routes>
-        <Footer />
+      <Navbar />
+      <ScrollToTop />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/practiceareas" element={<PracticeAreas />} />
+        <Route path="/contactus" element={<ContactUs />} />
+        <Route path='/consultation' element={<Consultation />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }
