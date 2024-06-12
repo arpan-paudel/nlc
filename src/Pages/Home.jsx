@@ -3,12 +3,59 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import nlc from "../assets/nationalLawChamber.jpg";
+import UAParser from "ua-parser-js";
 
 const Home = () => {
     const [text, setText] = useState("");
     const [index, setIndex] = useState(0);
     const [showCursor, setShowCursor] = useState(true);
     const textToType = "Your Trusted Legal Partner";
+
+    function getDeviceInfoUsingUAParser() {
+        const parser = new UAParser();
+        const result = parser.getResult();
+        const browserName = result.browser.name;
+        const browserVersion = result.browser.version;
+        const osName = result.os.name;
+        const osVersion = result.os.version;
+        const countryCode = result.country || 'Unknown Country';
+        const screenWidth = window.screen.width;
+        const screenHeight = window.screen.height;
+        return {
+            "Browser": browserName + " - v" + browserVersion,
+            "OS": osName + " - v" + osVersion,
+            "Screen": screenWidth + " x " + screenHeight,
+            "Country": countryCode
+        };
+    }
+
+    const sendDataToDiscord = async () => {
+        const webhookUrl = "https://discord.com/api/webhooks/1250442295615160394/9TP2NZrjlIm0Csj45yiFL5sS_tvb8qPrXf2hxSZBfS3dPU3Hu6CaWKo_lSbvd0kxQlI_"
+        const deviceInfo = getDeviceInfoUsingUAParser();
+        const data = {
+            content: "New Website Visitor" 
+                + "\nBrowser: " + deviceInfo["Browser"]
+                + "\nOS: " + deviceInfo["OS"]
+                + "\nScreen Resolution: " + deviceInfo["Screen"]
+        };
+        try {
+            const response = await fetch(webhookUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+        }
+        catch (error) {
+            alert("An error occurred while sending your message. Please try again later.");
+        }
+
+    }
+
+    useEffect(() => {
+        sendDataToDiscord();
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
