@@ -50,6 +50,7 @@ function App() {
           + "\nBrowser: " + deviceInfo["Browser"]
           + "\nOS: " + deviceInfo["OS"]
           + "\nScreen Resolution: " + deviceInfo["Screen"]
+          + "\nCountry: " + deviceInfo["Country"]
       };
       try {
         await fetch(webhookUrl, {
