@@ -29,34 +29,37 @@ const Home = () => {
         };
     }
 
-    const sendDataToDiscord = async () => {
-        const webhookUrl = "https://discord.com/api/webhooks/1250442295615160394/9TP2NZrjlIm0Csj45yiFL5sS_tvb8qPrXf2hxSZBfS3dPU3Hu6CaWKo_lSbvd0kxQlI_"
-        const deviceInfo = getDeviceInfoUsingUAParser();
-        const data = {
-            content: "New Website Visitor" 
-                + "\nBrowser: " + deviceInfo["Browser"]
-                + "\nOS: " + deviceInfo["OS"]
-                + "\nScreen Resolution: " + deviceInfo["Screen"]
-        };
-        try {
-            await fetch(webhookUrl, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            });
-        }
-        catch (error) {
-            alert("An error occurred while sending your message. Please try again later.");
-        }
 
-    }
 
     useEffect(() => {
-        sendDataToDiscord();
-    });
+        const sendDataToDiscord = async () => {
+            const webhookUrl = "https://discord.com/api/webhooks/1250442295615160394/9TP2NZrjlIm0Csj45yiFL5sS_tvb8qPrXf2hxSZBfS3dPU3Hu6CaWKo_lSbvd0kxQlI_"
+            const deviceInfo = getDeviceInfoUsingUAParser();
+            const data = {
+                content: "New Website Visitor"
+                    + "\nBrowser: " + deviceInfo["Browser"]
+                    + "\nOS: " + deviceInfo["OS"]
+                    + "\nScreen Resolution: " + deviceInfo["Screen"]
+            };
+            try {
+                await fetch(webhookUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+            }
+            catch (error) {
+                alert("An error occurred while sending your message. Please try again later.");
+            }
 
+        }
+
+        sendDataToDiscord();
+    }, []);
+
+    
     useEffect(() => {
         const interval = setInterval(() => {
             if (index < textToType.length) {
