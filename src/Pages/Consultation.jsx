@@ -50,7 +50,7 @@ const Consultation = () => {
             }
 
             if (hour < 9 || (hour === 9 && minute < 30) || hour >= 17) {
-                alert("Offline consultation is only available between 9:30 AM and 5:00 PM.");
+                alert("Offline == is only available between 9:30 AM and 5:00 PM.");
                 return;
             }
         }
